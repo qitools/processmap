@@ -11,7 +11,7 @@ temp <- gsub(',)', ')', fixed = TRUE, temp, perl = TRUE)
 temp <- gsub('Who:', '\nWho:', fixed = TRUE, temp, perl = TRUE)
 temp <- gsub('With:', '\nWith:', fixed = TRUE, temp, perl = TRUE)
 temp <- gsub('Where:', '\nWhere:', fixed = TRUE, temp, perl = TRUE)
-temp <- gsub('Note:', '\nNote:', fixed = TRUE, temp, perl = TRUE)
+temp <- gsub('Note:', '\nNote:\n', fixed = TRUE, temp, perl = TRUE)
 temp <- gsub("\\s+$", "", temp) #Removing trailing whitespace
 temp <- gsub(",+$", "", temp) #Remove trailing comma if accidentally added by user online
 temp <- paste('list(',temp,')')
