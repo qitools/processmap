@@ -1,16 +1,17 @@
 processmap <-
 function(content,topic,theme) {
-temp <- gsub('\n', '', fixed = TRUE, content, perl = TRUE)
-temp <- gsub("\\s+$", "", temp, perl = TRUE) #Removing trailing whitespace
-temp <- gsub(",+$", "", temp, perl = TRUE) #Remove trailing comma if accidentally added by user online
-temp <- paste('Mymatrix <- matrix(c(',temp,'), ncol=2, byrow=TRUE,dimnames = list(NULL, c("Reason","count")))')
-x<-eval(parse(file = "", n = NULL, text = temp))
 
 KUBlue = "#0022B4"
 SkyBlue = "#6DC6E7"
 
 temp <- content
 #temp <- gsub('\n', '', fixed = TRUE, temp)
+temp <- gsub(',,', ',', fixed = TRUE, temp, perl = TRUE)
+temp <- gsub(',)', ')', fixed = TRUE, temp, perl = TRUE)
+temp <- gsub('Who:', '\nWho:', fixed = TRUE, temp, perl = TRUE)
+temp <- gsub('With:', '\nWith:', fixed = TRUE, temp, perl = TRUE)
+temp <- gsub('Where:', '\nWhere:', fixed = TRUE, temp, perl = TRUE)
+temp <- gsub('Note:', '\nNote:', fixed = TRUE, temp, perl = TRUE)
 temp <- gsub("\\s+$", "", temp) #Removing trailing whitespace
 temp <- gsub(",+$", "", temp) #Remove trailing comma if accidentally added by user online
 temp <- paste('list(',temp,')')
@@ -24,7 +25,7 @@ for(i in 1: length(steps))
 	input.output[i]<-list(c(""))
 	}
 	
-#Add bold to each step name
+#Add bold to each step name (does not work)
 x.parameters<-vector(mode="list",length=length(steps))
 for(i in 1: length(steps))
 	{
