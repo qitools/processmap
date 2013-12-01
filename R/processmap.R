@@ -24,11 +24,20 @@ for(i in 1: length(steps))
 	input.output[i]<-list(c(""))
 	}
 	
+#Add bold to each step name
+x.parameters<-vector(mode="list",length=length(steps))
+for(i in 1: length(steps))
+	{
+	#steps[i]<-paste("~bold(",steps[i]) #Start
+	#steps[i]<-gsub("Who", ")Who",steps[i]) #Close
+	#steps[i]<-eval(parse(file = "", n = NULL, text = steps[i]))
+	}
+	
 #Parameters of each process
 x.parameters<-vector(mode="list",length=length(steps))
 for(i in 1: length(steps))
 	{
-	x.parameters[i]<-list(c(list(c("Operator", "C")),list(c("Guidance", "C")),list(c("Task", "P")),list(c("Queue", "N"))))
+	x.parameters[i]<-list(c(list(c("Task (what)", "P")),list(c("Operator (who)", "C")),list(c("Guidance (with)", "C")),list(c("Location (where)", "C")),list(c("What else (queue)", "N"))))
 	}
 	
 #Features of each process
