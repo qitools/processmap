@@ -1,4 +1,4 @@
-processmap <-
+processmap <-  
 function(content,topic,theme) {
 
 KUBlue = "#0022B4"
