@@ -1,7 +1,7 @@
 processmap <-  
 function(content,topic,theme) {
 
-KUBlue = "#0022B4"
+KUBlue = "#0022B4" #
 SkyBlue = "#6DC6E7"
 
 temp <- content
